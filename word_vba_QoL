@@ -1,6 +1,11 @@
+'Macro word pour le smodifications documentaires Lilly
+' Crées par Adrien FOUCAL @CapGemini @TMA Locales
+'
+'
+
 Sub Border_TEXT()
 '
-' Border_text :Crée la barre noire de modification dans du TEXTE
+' Border_text : Crée la barre noire de modification dans du TEXTE
 '
 '
     With Selection.ParagraphFormat
@@ -26,6 +31,7 @@ Sub Border_TEXT()
         .DefaultBorderColor = wdColorAutomatic
     End With
 End Sub
+
 Sub Clean_TEXT()
 '
 ' Clean Macro : SUPPRIME la barre noire de modification dans du TEXTE
@@ -109,8 +115,8 @@ End Sub
 
 Sub Save_TOC()
 '
-' Sauvegarde le fichier après avoir misà jour la ToC
-'
+' Sauvegarde le fichier après avoir mis à jour la ToC
+' Vous donnera un message d'erreur si pas de ToC dans votre document
 '
 '
   Dim oStory As Range
