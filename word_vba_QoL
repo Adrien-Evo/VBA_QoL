@@ -116,30 +116,25 @@ End Sub
 Sub Save_TOC()
 '
 ' Sauvegarde le fichier après avoir mis à jour la ToC
-' Vous donnera un message d'erreur si pas de ToC dans votre document
 '
 '
-  Dim oStory As Range
-  Dim oField As Field
-  Dim bSaveDate As Boolean
-  bSaveDate = False
-  
-  On Error Resume Next
-  For Each oStory In ActiveDocument.StoryRanges
-  For Each oField In oStory.Fields
-  If oField.Type = wdFieldSaveDate Then
-      bSaveDate = True
-  End If
-  oField.Update
-  Next oField
-  Next oStory
-  If bSaveDate = True Then
-      MsgBox "Save a second time to update a save date field"
-  End If
-  On Error GoTo 0
-  ActiveDocument.TablesOfContents(1).Update
-  ActiveDocument.Save
+'
+Dim oStory As Range
+Dim oField As Field
+Dim bSaveDate As Boolean
+bSaveDate = False
+
+On Error Resume Next
+For Each oField In oStory.Fields
+If oField.Type = wdFieldSaveDate Then
+    bSaveDate = True
+End If
+Next oField
+On Error GoTo 0
+ActiveDocument.TablesOfContents(1).Update
+ActiveDocument.Save
 
 End Sub
+
 
 
