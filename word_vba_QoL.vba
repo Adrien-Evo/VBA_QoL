@@ -1,4 +1,4 @@
-'Macro word pour le smodifications documentaires Lilly
+'Macro word pour les modifications documentaires Lilly
 ' Crées par Adrien FOUCAL @CapGemini @TMA Locales
 '
 '
@@ -31,7 +31,6 @@ Sub Border_TEXT()
         .DefaultBorderColor = wdColorAutomatic
     End With
 End Sub
-
 Sub Clean_TEXT()
 '
 ' Clean Macro : SUPPRIME la barre noire de modification dans du TEXTE
@@ -115,7 +114,7 @@ End Sub
 
 Sub Save_TOC()
 '
-' Sauvegarde le fichier après avoir mis à jour la ToC
+' Sauvegarde le fichier après avoir misà jour la ToC
 '
 '
 '
@@ -129,12 +128,17 @@ For Each oField In oStory.Fields
 If oField.Type = wdFieldSaveDate Then
     bSaveDate = True
 End If
+oField.Update
 Next oField
+
 On Error GoTo 0
 ActiveDocument.TablesOfContents(1).Update
 ActiveDocument.Save
 
 End Sub
+
+
+
 
 
 
